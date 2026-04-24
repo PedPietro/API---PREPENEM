@@ -1,9 +1,15 @@
+using System.ComponentModel.DataAnnotations.Schema;
+using System.Reflection;
 namespace MinhaLojaApi.Models;
 
 public class Quiz
 {
     public int IdQuiz { get; set; }
     public int IdTopico { get; set; }
+
+    [ForeignKey("IdTopico")]
+    public Assunto IdAssunto;
+
     public string Enunciado { get; set; }
     public string Explicacao { get; set; }
     public double Pontuacao { get; set; }

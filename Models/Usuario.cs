@@ -1,3 +1,4 @@
+using System.ComponentModel.DataAnnotations.Schema;
 namespace MinhaLojaApi.Models;
 
 public class Usuario
@@ -7,4 +8,7 @@ public class Usuario
     public string Senha { get; set; } = string.Empty;
     public string FotoPerfil { get; set; } = string.Empty;
     public string IdPost { get; set; } = string.Empty;
+
+    [ForeignKey("IdPost")]
+    public Post IdPost {get; set;}
 }
