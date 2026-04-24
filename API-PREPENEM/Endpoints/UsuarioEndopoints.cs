@@ -1,8 +1,8 @@
 using Microsoft.EntityFrameworkCore;
-using MinhaLojaApi.Data;
-using MinhaLojaApi.Models;
+using PREPENEMAPI.Data;
+using PREPENEMAPI.Models;
 
-namespace MinhaLojaApi.Endpoints;
+namespace PREPENEMAPI.Endpoints;
 
 public static class UsuarioEndpoints
 {
@@ -26,7 +26,7 @@ public static class UsuarioEndpoints
 
         grupo.MapPost("/", async (Usuario usuario, AppDbContext db) =>
         {
-            db.Usuarios.Add(usuario);
+            db.Usuario.Add(usuario);
             await db.SaveChangesAsync();
 
             return Results.Created($"/usuarios/{usuario.IdUsuario}", usuario);
@@ -34,7 +34,7 @@ public static class UsuarioEndpoints
 
         grupo.MapPut("/{id}", async (int id, Usuario usuarioAtualizado, AppDbContext db) =>
         {
-            var usuario = await db.Usuarios.FindAsync(id);
+            var usuario = await db.Usuario.FindAsync(id);
 
             if (usuario is null)
                 return Results.NotFound();

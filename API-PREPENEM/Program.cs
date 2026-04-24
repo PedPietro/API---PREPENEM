@@ -1,6 +1,6 @@
 using Microsoft.EntityFrameworkCore; 
-using MinhaLojaApi.Data; 
-using MinhaLojaApi.Endpoints;
+using PREPENEMAPI.Data; 
+using PREPENEMAPI.Endpoints;
 
 var builder = WebApplication.CreateBuilder(args);
 
