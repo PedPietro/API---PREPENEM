@@ -1,7 +1,7 @@
 using Microsoft.EntityFrameworkCore;
-using MinhaLojaApi.Models;
+using PREPENEMAPI.Models;
 
-namespace MinhaLojaApi.Data;
+namespace PREPENEMAPI.Data;
 
 
 public class AppDbContext : DbContext
