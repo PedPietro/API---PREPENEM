@@ -15,6 +15,9 @@ public class Assunto
     public Materia IdMateria;
     
 }
+/*
+
+OUTRO JEITO CASO TUDO DE ERRADO:
 
 //jeito 2
 
@@ -30,3 +33,4 @@ public nomeDaClasse (propriedadesParametro)
     {
         this.Id = ID Parametro;
     }
+*/
