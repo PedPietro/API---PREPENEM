@@ -3,19 +3,24 @@ namespace MinhaLojaApi.Models;
 
 public class Questoes
 {
-    public int IdQuestao { get; set; }
-    public int IdQuiz { get; set; }
+    [Key]
+    public int IdQuestao { get; set; };
+
+    public int IdQuiz { get; set; } = int.Empty;
 
     [ForeignKey("IdQuiz")]
-    public Quiz IdQuiz;
+    public Quiz Quiz;
 
-    public int IdFlashCard { get; set; }
+    public int IdFlashCard { get; set; } = int.Empty;
 
     [ForeignKey("IdFlashCard")]
-    public FlashCard IdFlashCard;
+    public FlashCard FlashCard;
 
-    public string TextoQuestao { get; set; }
-    public string? ImgQuestao { get; set; }
+    [Required]
+    public string TextoQuestao { get; set; } = string.Empty;
+    
+    public string? ImgQuestao { get; set; };
 
-    public string? ImgNome { get; set; }
+    public string? ImgNome { get; set; };
 }
+

@@ -2,6 +2,11 @@ namespace MinhaLojaApi.Models;
 
 public class Materia
 {
-    public int IdMateria { get; set; }
-    public string Nome { get; set; }
+
+    [Key]
+    public int IdMateria { get; set; };
+    
+    [Required]
+    [MaxLength(100)]
+    public string Nome { get; set; } = string.Empty;
 }

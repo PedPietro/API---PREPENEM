@@ -2,7 +2,18 @@ namespace MinhaLojaApi.Models;
 
 public class Post
 {
-    public int IdPost { get; set; }
-    public string Texto { get; set; }
-    public string Imagem { get; set; }
+    [Key]
+    public int IdPost { get; set; };
+
+    public string? Texto { get; set; };
+    
+    public string? Imagem { get; set; };
+    
+    public int IdUsuario { get; set; }; = int.Empty;
+
+    [ForeignKey("idUsuario")]
+    public Usuario Usuario { get; set; };
 }
+
+
+

@@ -5,11 +5,16 @@ namespace MinhaLojaApi.Models;
 
 public class Assunto
 {
+    [Key]
     public int IdAssunto { get; set; }
-    public string Nome { get; set; }
-    public string Topicos { get; set; }
 
-    public int IdMateria { get; set;}
+    [Required]
+    public string Nome { get; set; } = string.Empty;
+
+    [Required]
+    public string Topicos { get; set; } = string.Empty;
+
+    public int IdMateria { get; set;}  = string.Empty;
 
     [ForeignKey("IdMateria")]
     public Materia IdMateria;

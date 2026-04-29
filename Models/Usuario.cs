@@ -3,12 +3,16 @@ namespace MinhaLojaApi.Models;
 
 public class Usuario
 {
+    [Key]
     public int IdUsuario { get; set; }
-    public string Email { get; set; } = string.Empty;
-    public string Senha { get; set; } = string.Empty;
-    public string FotoPerfil { get; set; } = string.Empty;
-    public string IdPost { get; set; } = string.Empty;
 
-    [ForeignKey("IdPost")]
-    public Post IdPost {get; set;}
+    [Required]
+    public string Email { get; set; } = string.Empty;
+
+    [Required]
+    public string Senha { get; set; } = string.Empty;
+
+    public string? FotoPerfil { get; set; };
 }
+
+

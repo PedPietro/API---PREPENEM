@@ -4,27 +4,39 @@ namespace MinhaLojaApi.Models;
 
 public class Quiz
 {
-    public int IdQuiz { get; set; }
-    public int IdTopico { get; set; }
+    [Key]
+    public int IdQuiz { get; set; };
+
+    public int IdTopico { get; set; } = int.Empty;
 
     [ForeignKey("IdTopico")]
-    public Assunto IdAssunto;
+    public Assunto Assunto;
 
-    public string Enunciado { get; set; }
-    public string Explicacao { get; set; }
-    public double Pontuacao { get; set; }
+    [Required]
+    public string Enunciado { get; set; };
 
-    public string Alt_a { get; set; }
+    [Required]
+    public string Explicacao { get; set; };
+    
+    [Required]
+    public double Pontuacao { get; set; };
 
-    public string Alt_b { get; set; }
+    [Required]
+    public string Alt_a { get; set; };
 
-    public string Alt_c { get; set; }
+    [Required]
+    public string Alt_b { get; set; };
 
-    public string Alt_d { get; set; }
+    [Required]
+    public string Alt_c { get; set; };
 
-    public string Alt_e { get; set; }
+    [Required]
+    public string Alt_d { get; set; };
 
-    public string Alt_e { get; set; }
+    [Required]
+    public string Alt_e { get; set; };
 
-    public string RespostaCorreta { get; set; }
+
+    [Required]
+    public string RespostaCorreta { get; set; } = string.Empty;
 }

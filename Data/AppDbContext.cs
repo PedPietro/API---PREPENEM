@@ -21,44 +21,65 @@ public class AppDbContext : DbContext
     public DbSet<Pontuacao> Pontuacoes { get; set; }
 
     protected override void OnModelCreating(ModelBuilder modelBuilder)
-        {
-        // Define que todas as tabelas ficarão dentro do schema "API" no SQL Server
-        modelBuilder.HasDefaultSchema("API");
+{
+    modelBuilder.HasDefaultSchema("PREPENEM");
 
-        modelBuilder.Entity<Usuario>().HasKey(u => u.IdUsuario);
+    // Usuario
+    modelBuilder.Entity<Usuario>()
+        .Property(u => u.Email)
+        .IsRequired()
+        .HasColumnType("varchar(100)");
 
-        // Define que o Nome é obrigatório e tem limite de 50 caracteres (varchar)
-        modelBuilder.Entity<Usuario>().Property(u =>
-        u.Nome).IsRequired().HasColumnType("varchar(50)");
+    modelBuilder.Entity<Usuario>()
+        .Property(u => u.Senha)
+        .IsRequired()
+        .HasColumnType("varchar(255)");
 
-        modelBuilder.Entity<Usuario>().Property(c =>
-        c.Telefone).IsRequired().HasColumnType("varchar(15)");
-        // --- CONFIGURANDO A TABELA PEDIDO ---
+    // Maratona
+    modelBuilder.Entity<Maratona>()
+        .Property(m => m.Titulo)
+        .IsRequired()
+        .HasColumnType("varchar(100)");
 
-        // Define que o IdPedido é a Chave Primária (PK)
-        modelBuilder.Entity<Pedido>().HasKey(p => p.IdPedido);
+    modelBuilder.Entity<Maratona>()
+        .Property(m => m.TipoDeMaratona)
+        .HasColumnType("varchar(50)");
 
-        // Define que a DataPedido é obrigatória e do tipo datetime
-        modelBuilder.Entity<Pedido>().Property(p =>
-        p.DataPedido).IsRequired().HasColumnType("datetime");
-
-        // Define que o ValorTotal usa o tipo money no SQL Server
-        modelBuilder.Entity<Pedido>().Property(p => p.ValorTotal).HasColumnType("money");
-        // Cria a relação de Chave Estrangeira (FK): Um Pedido tem Um Cliente
-        modelBuilder.Entity<Pedido>()
-        // Diz que o Pedido tem 1 Cliente (relacionamento lógico)
-        .HasOne<Cliente>()
-        // Diz que um Cliente pode ter muitos pedidos (WithMany fica vazio pois não foi mapeada a lista na classe Cliente)
+    // Participou — chave composta se não tiver IdParticipacao
+    modelBuilder.Entity<Participou>()
+        .HasOne(p => p.Usuario)
         .WithMany()
-        // Aponta que a chave estrangeira na tabela Pedido é a propriedade IdCliente
-        .HasForeignKey(p => p.IdCliente);
-    }
+        .HasForeignKey(p => p.IdUsuario);
+
+    modelBuilder.Entity<Participou>()
+        .HasOne(p => p.Maratona)
+        .WithMany()
+        .HasForeignKey(p => p.IdMaratona);
+
+    // Quiz
+    modelBuilder.Entity<Quiz>()
+        .Property(q => q.Enunciado)
+        .IsRequired()
+        .HasColumnType("varchar(500)");
+
+    // Flashcard
+    modelBuilder.Entity<FlashCard>()
+        .Property(f => f.Pergunta)
+        .IsRequired()
+        .HasColumnType("varchar(300)");
+
+    // Assunto
+    modelBuilder.Entity<Assunto>()
+        .HasOne(a => a.Materia)
+        .WithMany()
+        .HasForeignKey(a => a.IdMateria);
+}
     
 }
-Configuração da Conexão: appsettings.json
+/*Configuração da Conexão: appsettings.json
 Abra o arquivo appsettings.json na raiz do projeto e adicione a "Connection String" (string de
 conexão) com seu Servidor, Usuário e Senha do SQL Server. Deve ficar assim:
-JSON
+JSON*/
 {
  "Logging": {
  "LogLevel": {
