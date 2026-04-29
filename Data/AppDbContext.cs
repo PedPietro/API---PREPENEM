@@ -33,7 +33,7 @@ public class AppDbContext : DbContext
     modelBuilder.Entity<Usuario>()
         .Property(u => u.Senha)
         .IsRequired()
-        .HasColumnType("varchar(255)");
+        .HasColumnType("varchar(100)");
 
     // Maratona
     modelBuilder.Entity<Maratona>()
@@ -62,11 +62,21 @@ public class AppDbContext : DbContext
         .IsRequired()
         .HasColumnType("varchar(500)");
 
+    modelBuilder.Entity<Quiz>()
+        .HasOne(q => q.Assunto)
+        .WithMany()
+        .HasForeignKey(q => q.IdAssunto);
+
     // Flashcard
     modelBuilder.Entity<FlashCard>()
         .Property(f => f.Pergunta)
         .IsRequired()
         .HasColumnType("varchar(300)");
+
+    modelBuilder.Entity<FlashCard>()
+        .HasOne(f => f.Assunto)
+        .WithMany()
+        .HasForeignKey(f => f.IdTopico)    
 
     // Assunto
     modelBuilder.Entity<Assunto>()
@@ -80,16 +90,15 @@ public class AppDbContext : DbContext
 Abra o arquivo appsettings.json na raiz do projeto e adicione a "Connection String" (string de
 conexão) com seu Servidor, Usuário e Senha do SQL Server. Deve ficar assim:
 JSON*/
-{
- "Logging": {
- "LogLevel": {
- "Default": "Information",
- "Microsoft.AspNetCore": "Warning"
+
+"Logging": {
+    "LogLevel": {
+        "Default": "Information",
+        "Microsoft.AspNetCore": "Warning"
  }
  },
  "AllowedHosts": "*",
- "ConnectionStrings": {
- "DefaultConnection": "Server=SEU_SERVIDOR;Database=MinhaLojaDB;User
-Id=SEU_USUARIO;Password=SUA_SENHA;TrustServerCertificate=True;"
- }
-}
+
+"ConnectionStrings": {
+    "DefaultConnection": "Server=SEU_SERVIDOR;Database=MinhaLojaDB;UserId=SEU_USUARIO;Password=SUA_SENHA;TrustServerCertificate=True;"
+}    

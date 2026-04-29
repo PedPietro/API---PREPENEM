@@ -9,7 +9,7 @@ public class FlashCard
     public int IdTopico { get; set; } = int.Empty;
   
     [ForeignKey("IdTopico")]
-    public Assunto IdAssunto;
+    public Assunto Assunto;
 
     [Required]
     public string Pergunta { get; set; } = string.Empty;

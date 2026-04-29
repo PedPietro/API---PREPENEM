@@ -17,7 +17,7 @@ public class Assunto
     public int IdMateria { get; set;}  = string.Empty;
 
     [ForeignKey("IdMateria")]
-    public Materia IdMateria;
+    public Materia Materia;
     
 }
 /*
