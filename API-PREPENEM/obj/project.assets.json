@@ -4196,23 +4196,23 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\u24158\\.nuget\\packages\\": {},
+    "C:\\Users\\u24147\\.nuget\\packages\\": {},
     "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\u24158\\Documents\\API---PREPENEM\\API-PREPENEM\\PREPENEMAPI.csproj",
+      "projectUniqueName": "C:\\Users\\u24147\\Documents\\GitHub\\API---PREPENEM\\API-PREPENEM\\PREPENEMAPI.csproj",
       "projectName": "PREPENEMAPI",
-      "projectPath": "C:\\Users\\u24158\\Documents\\API---PREPENEM\\API-PREPENEM\\PREPENEMAPI.csproj",
-      "packagesPath": "C:\\Users\\u24158\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\u24158\\Documents\\API---PREPENEM\\API-PREPENEM\\obj\\",
+      "projectPath": "C:\\Users\\u24147\\Documents\\GitHub\\API---PREPENEM\\API-PREPENEM\\PREPENEMAPI.csproj",
+      "packagesPath": "C:\\Users\\u24147\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\u24147\\Documents\\GitHub\\API---PREPENEM\\API-PREPENEM\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
       ],
       "configFilePaths": [
-        "C:\\Users\\u24158\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\u24147\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
@@ -4221,6 +4221,7 @@
       ],
       "sources": {
         "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+        "C:\\Program Files\\dotnet\\library-packs": {},
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {
@@ -4289,7 +4290,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\10.0.106/PortableRuntimeIdentifierGraph.json",
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\10.0.103/PortableRuntimeIdentifierGraph.json",
         "packagesToPrune": {
           "Microsoft.AspNetCore": "(,10.0.32767]",
           "Microsoft.AspNetCore.Antiforgery": "(,10.0.32767]",

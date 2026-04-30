@@ -8,7 +8,6 @@ public class AppDbContext : DbContext
     {
     // Construtor que recebe as configurações de banco e passa para a classe base
     public AppDbContext(DbContextOptions<AppDbContext> options) : base(options) { }
-    // Representa a tabela de Clientes no banco de dados
     public DbSet<Usuario> Usuarios { get; set; }
     public DbSet<Assunto> Assuntos { get; set; }
     public DbSet<FlashCard> FlashCards { get; set; }
@@ -76,29 +75,14 @@ public class AppDbContext : DbContext
     modelBuilder.Entity<FlashCard>()
         .HasOne(f => f.Assunto)
         .WithMany()
-        .HasForeignKey(f => f.IdTopico)    
+        .HasForeignKey(f => f.IdTopico);    
 
     // Assunto
     modelBuilder.Entity<Assunto>()
         .HasOne(a => a.Materia)
         .WithMany()
         .HasForeignKey(a => a.IdMateria);
+        
 }
     
 }
-/*Configuração da Conexão: appsettings.json
-Abra o arquivo appsettings.json na raiz do projeto e adicione a "Connection String" (string de
-conexão) com seu Servidor, Usuário e Senha do SQL Server. Deve ficar assim:
-JSON*/
-
-"Logging": {
-    "LogLevel": {
-        "Default": "Information",
-        "Microsoft.AspNetCore": "Warning"
- }
- },
- "AllowedHosts": "*",
-
-"ConnectionStrings": {
-    "DefaultConnection": "Server=SEU_SERVIDOR;Database=MinhaLojaDB;UserId=SEU_USUARIO;Password=SUA_SENHA;TrustServerCertificate=True;"
-}    

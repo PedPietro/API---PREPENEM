@@ -4,7 +4,7 @@ namespace MinhaLojaApi.Models;
 public class FlashCard
 {
     [Key]
-    public int IdFlashCard { get; set; };
+    public int IdFlashCard { get; set; }
 
     public int IdTopico { get; set; } = int.Empty;
   

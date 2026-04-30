@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("PREPENEMAPI")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+9d025f51c38d2dfd3f2f8d176dd25fb01ebd02aa")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+0a537e4258516d9714fe1607f06438953770202a")]
 [assembly: System.Reflection.AssemblyProductAttribute("PREPENEMAPI")]
 [assembly: System.Reflection.AssemblyTitleAttribute("PREPENEMAPI")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

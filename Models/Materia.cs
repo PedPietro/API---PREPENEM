@@ -4,7 +4,7 @@ public class Materia
 {
 
     [Key]
-    public int IdMateria { get; set; };
+    public int IdMateria { get; set; }
     
     [Required]
     [MaxLength(100)]
