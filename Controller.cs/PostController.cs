@@ -65,4 +65,13 @@ public class PostController : ControllerBase
 
         return NoContent();
     }
-}
+} 
+
+/*
+
+PREECISA CRIAR A MIGRAÇÃO E ATUALIZAR O BANCO DE DADOS APÓS ESSAS ALTERAÇÕES:
+
+cd API-PREPENEM
+dotnet ef migrations add CriacaoInicial
+dotnet ef database update
+*/
