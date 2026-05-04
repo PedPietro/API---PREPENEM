@@ -1,5 +1,4 @@
-namespace MinhaLojaApi.Models;
-
+namespace APIPREPENEM.Models.Pontuacao;
 public class Questoes
 {
     public double PontosGerais { get; set; } = double.Empty;

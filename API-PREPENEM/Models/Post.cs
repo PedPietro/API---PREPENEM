@@ -1,5 +1,4 @@
-namespace MinhaLojaApi.Models;
-
+namespace APIPREPENEM.Models.Post;
 public class Post
 {
     [Key]

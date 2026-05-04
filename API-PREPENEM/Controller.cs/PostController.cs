@@ -1,7 +1,7 @@
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
-using MinhaLojaApi.Data;
-using MinhaLojaApi.Models;
+using APIPREPENEM.Data;
+using APIPREPENEM.Models;
 
 [ApiController]
 [Route("api/[controller]")]

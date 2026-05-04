@@ -1,5 +1,7 @@
 using Microsoft.AspNetCore.Mvc;
-using MinhaLojaApi.Models; // Ajuste para o seu namespace
+using APIPREPENEM.Data;
+using APIPREPENEM.Models;
+
 
 namespace MinhaLojaApi.Controllers;
 
