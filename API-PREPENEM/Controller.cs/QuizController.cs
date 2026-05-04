@@ -7,58 +7,60 @@ namespace APIPREPENEM.Controllers;
 
 [ApiController]
 [Route("api/[controller]")]
-public class UsuarioController : ControllerBase //define aqui a rota 
+public class QuizController : ControllerBase
 {
     private readonly AppDbContext _context;
 
     // Injeta o contexto do banco
-    public UsuarioController(AppDbContext context)
+    public QuizController(AppDbContext context)
     {
         _context = context;
     }
 
-    // GET: api/usuarios — busca todos os usuários
+    // GET: api/quiz — busca todos os quizzes
     [HttpGet]
     public async Task<IActionResult> GetAll()
     {
-        var usuario = await _context.Usuario
-            .OrderByDescending(u => u.IdUsuario)
+        var quiz = await _context.Quiz
+            .Include(q => q.Assunto)
+            .OrderByDescending(q => q.IdQuiz)
             .ToListAsync();
 
-        return Ok(usuario);
+        return Ok(quiz);
     }
 
-    // GET: api/usuarios/1 — busca um usuário específico
+    // GET: api/quiz/1 — busca um quiz específico
     [HttpGet("{id}")]
     public async Task<IActionResult> GetById(int id)
     {
-        var usuario = await _context.Usuario
-            .FirstOrDefaultAsync(u => u.IdUsuario == id);
+        var quiz = await _context.Quiz
+            .Include(q => q.Assunto)
+            .FirstOrDefaultAsync(q => q.IdQuiz == id);
 
-        if (usuario == null) return NotFound("Usuário não encontrado.");
+        if (quiz == null) return NotFound("Quiz não encontrado.");
 
-        return Ok(usuario);
+        return Ok(quiz);
     }
 
-    // POST: api/usuarios — cria um novo usuario
+    // POST: api/quiz — cria um novo quiz
     [HttpPost]
-    public async Task<IActionResult> Create([FromBody] Usuario usuario)
+    public async Task<IActionResult> Create([FromBody] Quiz quiz)
     {
-        _context.Usuario.Add(usuario);
+        _context.Quiz.Add(quiz);
         await _context.SaveChangesAsync();
 
-        return CreatedAtAction(nameof(GetById), new { id = usuario.IdUsuario }, usuario);
+        return CreatedAtAction(nameof(GetById), new { id = quiz.IdQuiz }, quiz);
     }
 
-    // DELETE: api/usuarios/1 — deleta um usuario
+    // DELETE: api/quiz/1 — deleta um quiz
     [HttpDelete("{id}")]
     public async Task<IActionResult> Delete(int id)
     {
-        var usuario = await _context.Usuario.FindAsync(id);
+        var quiz = await _context.Quiz.FindAsync(id);
 
-        if (usuario == null) return NotFound("Usuário não encontrado.");
+        if (quiz == null) return NotFound("Quiz não encontrado.");
 
-        _context.Usuario.Remove(usuario);
+        _context.Quiz.Remove(quiz);
         await _context.SaveChangesAsync();
 
         return NoContent();

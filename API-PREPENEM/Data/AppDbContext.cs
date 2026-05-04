@@ -156,10 +156,15 @@ public class AppDbContext : DbContext
     
         //Pontuação
         modelBuilder.Entity<Pontuacao>()
-            .HasNoKey(); // Indica que esta entidade não tem chave primária
+            .Property(p => p.PontosGerais)
+            .HasColumnType("float");
 
         modelBuilder.Entity<Pontuacao>()
-            .Property(p => p.PontosGerais)
+            .Property(p => p.PontosDeQuestoes)
+            .HasColumnType("float");
+
+        modelBuilder.Entity<Pontuacao>()
+            .Property(p => p.PontosDeMaratona)
             .HasColumnType("float");
     }
     

@@ -1,6 +1,5 @@
 using Microsoft.EntityFrameworkCore;
 using APIPREPENEM.Data;
-using APIPREPENEM.Endpoints;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -10,15 +9,18 @@ builder.Services.AddDbContext<AppDbContext>(options =>
     )
 );
 
+builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
 var app = builder.Build();
 
-app.UseSwagger();
-app.UseSwaggerUI();
+if (app.Environment.IsDevelopment())
+{
+    app.UseSwagger();
+    app.UseSwaggerUI();
+}
 
-app.MapUsuarioEndpoints();
-
+app.MapControllers();
 
 app.Run();
