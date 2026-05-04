@@ -1,4 +1,8 @@
-namespace PREPENEMAPI.Endpoints;
+using Microsoft.EntityFrameworkCore;
+using APIPREPENEM.Data;
+using APIPREPENEM.Models;
+
+namespace APIPREPENEM.Endpoints;
 public static class UsuarioEndpoints
 {
     public static void MapUsuarioEndpoints(this WebApplication app)

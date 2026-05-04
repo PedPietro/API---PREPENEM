@@ -1,5 +1,6 @@
-using System.ComponentModel.DataAnnotations.Schema;
-namespace APIPREPENEM.Models.Usuario;
+using System.ComponentModel.DataAnnotations;
+
+namespace APIPREPENEM.Models;
 
 public class Usuario
 {

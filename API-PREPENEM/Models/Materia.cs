@@ -1,8 +1,9 @@
-namespace APIPREPENEM.Models.Materia;
+using System.ComponentModel.DataAnnotations;
+
+namespace APIPREPENEM.Models;
 
 public class Materia
 {
-
     [Key]
     public int IdMateria { get; set; }
     

@@ -3,6 +3,7 @@ using Microsoft.EntityFrameworkCore;
 using APIPREPENEM.Data;
 using APIPREPENEM.Models;
 
+namespace APIPREPENEM.Controllers;
 
 [ApiController]
 [Route("api/[controller]")]

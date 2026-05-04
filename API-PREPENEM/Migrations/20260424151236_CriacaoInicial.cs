@@ -2,7 +2,7 @@
 
 #nullable disable
 
-namespace PREPENEMAPI.Migrations
+namespace APIPREPENEM.Migrations
 {
     /// <inheritdoc />
     public partial class CriacaoInicial : Migration

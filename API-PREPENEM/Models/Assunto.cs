@@ -1,7 +1,7 @@
-using System.ComponentModel.DataAnnotations.Schema;
 using System.ComponentModel.DataAnnotations;
-using System.Xml.Serialization;
-namespace APIPREPENEM.Models.Assunto;
+using System.ComponentModel.DataAnnotations.Schema;
+
+namespace APIPREPENEM.Models;
 
 public class Assunto
 {
@@ -14,11 +14,10 @@ public class Assunto
     [Required]
     public string Topicos { get; set; } = string.Empty;
 
-    public int IdMateria { get; set;}  = string.Empty;
+    public int IdMateria { get; set; }
 
     [ForeignKey("IdMateria")]
-    public Materia Materia;
-    
+    public Materia Materia { get; set; } = null!;
 }
 /*
 

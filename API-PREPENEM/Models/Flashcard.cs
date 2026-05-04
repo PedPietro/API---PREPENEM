@@ -1,15 +1,17 @@
+using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
-namespace APIPREPENEM.Models.FlashCard;
+
+namespace APIPREPENEM.Models;
 
 public class FlashCard
 {
     [Key]
     public int IdFlashCard { get; set; }
 
-    public int IdTopico { get; set; } = int.Empty;
-  
+    public int IdTopico { get; set; }
+
     [ForeignKey("IdTopico")]
-    public Assunto Assunto;
+    public Assunto Assunto { get; set; } = null!;
 
     [Required]
     public string Pergunta { get; set; } = string.Empty;

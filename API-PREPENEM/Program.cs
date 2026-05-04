@@ -1,6 +1,6 @@
-using Microsoft.EntityFrameworkCore; 
-using PREPENEMAPI.Data; 
-using PREPENEMAPI.Endpoints;
+using Microsoft.EntityFrameworkCore;
+using APIPREPENEM.Data;
+using APIPREPENEM.Endpoints;
 
 var builder = WebApplication.CreateBuilder(args);
 

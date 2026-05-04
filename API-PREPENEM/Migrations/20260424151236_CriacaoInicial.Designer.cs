@@ -4,11 +4,11 @@ using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
 using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
-using PREPENEMAPI.Data;
+using APIPREPENEM.Data;
 
 #nullable disable
 
-namespace PREPENEMAPI.Migrations
+namespace APIPREPENEM.Migrations
 {
     [DbContext(typeof(AppDbContext))]
     [Migration("20260424151236_CriacaoInicial")]
@@ -25,7 +25,7 @@ namespace PREPENEMAPI.Migrations
 
             SqlServerModelBuilderExtensions.UseIdentityColumns(modelBuilder);
 
-            modelBuilder.Entity("PREPENEMAPI.Models.Usuario", b =>
+            modelBuilder.Entity("APIPREPENEM.Models.Usuario", b =>
                 {
                     b.Property<int>("IdUsuario")
                         .ValueGeneratedOnAdd()

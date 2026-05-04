@@ -3,6 +3,8 @@ using Microsoft.EntityFrameworkCore;
 using APIPREPENEM.Data;
 using APIPREPENEM.Models;
 
+namespace APIPREPENEM.Controllers;
+
 [ApiController]
 [Route("api/[controller]")]
 public class QuestoesController : ControllerBase
@@ -45,7 +47,7 @@ public class QuestoesController : ControllerBase
         _context.Questoes.Add(questao);
         await _context.SaveChangesAsync();
 
-        return CreatedAtAction(nameof(GetById), new { id = questao.IdPost }, questao);
+        return CreatedAtAction(nameof(GetById), new { id = questao.IdQuestao }, questao);
     }
 
     // DELETE: api/questoes/1 — deleta um questao

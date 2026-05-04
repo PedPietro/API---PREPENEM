@@ -1,7 +1,8 @@
-namespace APIPREPENEM.Models.Pontuacao;
-public class Questoes
+namespace APIPREPENEM.Models;
+
+public class Pontuacao
 {
-    public double PontosGerais { get; set; } = double.Empty;
-    public double PontosDeQuestoes { get; set; } = double.Empty;
-    public double PontosDeMaratona { get; set; } = double.Empty;
+    public double PontosGerais { get; set; }
+    public double PontosDeQuestoes { get; set; }
+    public double PontosDeMaratona { get; set; }
 }
